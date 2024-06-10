@@ -1,0 +1,510 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.beranda-masuk {
+    color: #ffffff;
+}
+
+.user {
+    font-weight: 501;
+}
+
+.selamatdatang {
+    text-align: right;
+    font-size: 75px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-right: 50px;
+    margin-top: 300px;
+    margin-bottom: 30px;
+}
+
+.bold{
+    font-weight: 500;
+}
+
+.mandi {
+    text-align: right;
+    font-size: 50px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-right: 50px;
+}
+
+.sidebar {
+    background-color: #0D562A;
+    height: 100vh;
+}
+
+.content {
+    background-color: #F5F5F5;
+    height: 100vh;
+}
+
+.sidebar img {
+    width: 100px;
+}
+
+.pemerintah h1 {
+    color: white;
+    font-size: 18px;
+    font-weight: 501;
+}
+
+.kategori h1{
+    color: #FFDE33;
+    font-size: 18px;
+    font-weight: 501;
+}
+/* } CLASS */
+
+#pelayanan {
+    width: 100%;
+    height: 80px;
+    font-weight: 501;
+    border-radius: 0%;
+    background-color: #0D562A;
+    border: none;
+}
+
+.kategori {
+    margin-top: 60px;
+    margin-left: 10px;
+}
+
+#layanan {
+    width: 20px;
+}
+
+#transaksi {
+    width: 20px;
+}
+
+#bantuan {
+    width: 20px;
+}
+
+.nama {
+    box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.5);
+    background-color: white;
+    height: 100px;
+    width: 100%;
+}
+
+.selamat {
+    font-weight: 501;
+    font-size: 28px;
+    padding-top: 32px;
+    color: #327A6D;
+}
+
+.memilih {
+    font-weight: 501;
+    font-size: 30px;
+    padding-top: 30px;
+}
+
+.surat {
+    box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.5);
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 40px;
+}
+
+.surat-selamat {
+    background-color: #0D562A;
+    width: 35%;
+    height: 14%;
+    margin-top: 60px;
+    padding-bottom: 30px;
+    margin-left: 90px;
+}
+
+.alif {
+    padding-top: 18px;
+    margin-left: 37px;
+}
+
+.cetak {
+    font-weight: 501;
+    font-size: 32px;
+    color: #327A6D;
+}
+
+.cetak-selamat {
+    font-size: 30px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-left: 58px;
+}
+
+.buat-surat {
+    font-weight: 501;
+    font-size: 17px;
+    color: #858585;
+}
+
+.buat-selamat {
+    font-size: 19px;
+    color: #ffffff;
+    margin-left: 58px;
+}
+
+#iconsurat {
+    width: 100px;
+}
+
+#logoluwuk {
+    width: 95px;
+}
+
+#gubernur {
+    width: 33%;
+    margin-left: 100px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;   
+    }
+
+#pilih {
+    background-color: #0D562A;
+    color: white;
+    width: 300px;
+    height: 60px;
+}
+
+.pilihan {
+    font-weight: 501;
+    font-size: 20px;
+}
+
+#kembali {
+    background-color: #0D562A;
+    color: white;
+    width: 150px;
+    height: 75px;
+}
+
+.kembali {
+    padding-top: 30px;
+}
+
+#iconpajak {
+    width: 100px;
+}
+
+#iconbansos {
+    width: 100px;
+}
+
+#icondesa {
+    width: 100px;
+}
+
+.digides-digital {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#icon {
+    width: 15px;
+}
+
+#iconpanah {
+    width: 40px;
+    margin-right: 50px;
+    margin-left: 25px;
+}
+
+#iconsawah {
+    width: 40px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+#ktp {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+#pt {
+    color: #327A6D;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+}
+
+.bg-login{
+    height: 100vh;
+    background-image: url("../img/bajubodoo.jpeg");
+    background-size: cover;
+}
+
+.bajubodo{
+    font-size: 35px;
+}
+
+.tuf{
+    width: 1706px;
+    height: 754px;
+    background-image: url("../img/baju9.jpg");
+    background-size: cover;
+}
+
+.nav-link{
+    /* font-size: 20px; */
+    font-weight: 400;
+}
+
+.jas{
+    font-size: 35px;
+    font-weight: 600;
+    color: #28a745;
+}
+
+.jas1{
+    font-weight: 400;
+}
+
+.bg-home{
+    background-color: #eaf8ef;
+}
+
+.baju1{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.baju2{
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+}
+
+.terms-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.terms-list {
+    padding-left: 20px;
+}
+
+.contact-info {
+    margin-top: 20px;
+}
+
+.payment-info {
+    margin-top: 20px;
+}
+
+.bg-navbar{
+    background-color: #2b5828; 
+}
+
+.produk{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.border{
+    width: 300px;
+}
+
+.bg-sawah{
+    width: 1920px;
+    height: 924px;
+    background-image: url('../../img/sawah.png');
+    background-size: cover;
+}
+
+.fullscreen-bg{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+}
+
+.fullscreen-bg_video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.fullscreen-bg_playlist{
+	display: none;
+}
+
+@media (min-aspect-ratio: 16/9){
+    .fullscreen-bg_video{
+        height: 300%;
+        top: -100%;
+    }
+}
+
+@media (max-aspect-ratio: 16/9){
+    .fullscreen-b__video{
+        width: 300%;
+        left: -100%;
+    }
+}
+
+@media (max-width: 767px){
+    .fullscreen-bg{
+        background: url('../../img/sawah.png') center center / cover no-repeat;
+    }
+
+    .fullscreen-bg_video{
+        display: none;
+    }
+}
+
+.bg-selamat{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, #0d562a52, #20551a52, #ffc80052), url('../../img/kampungluwu.png');
+    background-position: center;
+    background-size: cover;
+}
+
+#bg-hijau {
+    height: 100%;
+    width: 100%;
+    background-color: #0D562A;
+    opacity: 0.5;
+    /* filter: brightness(0) saturate(100%) invert(21%) sepia(8%) saturate(5665%) hue-rotate(97deg) brightness(105%) contrast(90%); */
+    position: absolute;
+    z-index: 1;
+    margin: auto;
+    top: 0;
+    left: 0;
+}
+
+.memulai {
+    font-size: 45px;
+    color: #0D562A;
+}
+
+.memulaisawah {
+    font-size: 45px;
+    color: #ffffff;
+}
+
+
+#logoluwu{
+    width: 240px;
+}
+
+.bg-login .container #garis {
+    width: 318px;
+    height: 1px;
+    background-color: white;
+}
+
+.form-masuk div input{
+    width: 695px;
+    height: 106px;
+    background-color: #F5F5F5;
+}
+
+.form-bansos div input{
+    width: 1500px;
+    height: 50px;
+    background-color: #F5F5F5;
+}
+
+.form-masuk div input::placeholder{
+    font-size: 22px;
+}
+
+.form-bansos div input::placeholder{
+    font-size: 15px;
+}
+
+.tombol-masuk {
+    width: 695px;
+    height: 113px;
+    font-size: 30px;
+    background-color: #0D562A;
+    color: white;
+    font-weight: bold;
+}
+
+.tombol-scan {
+    width: 695px;
+    height: 128px;
+    font-size: 30px;
+    background-color: white;
+    color: #0D562A;
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+    align-self: center;
+}
+
+.namabutton {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.5);
+    background-color: white;
+    height: 100px;
+    width: 100%;
+}
+
+.namaselamat {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    height: 100px;
+    width: 100%;
+}
+
+.namasawah {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #0D562A;
+    height: 100px;
+    width: 100%;
+}
+
+#scans {
+    color: #0D562A;
+}
+
+#scan {
+    width: 30px;
+    margin-bottom: 16px;
+}
+
+#ktp {
+    width: 400px;
+}
+
+.bg-belakang {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 4;
+}
+
+.huruf-tebal {
+    font-weight: 900;
+}
