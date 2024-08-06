@@ -25,6 +25,18 @@ class DatabaseSeeder extends Seeder
             'nama_role' => 'super'
         ]);
 
+        DB::table('keterangan')->insert([
+            'nama_keterangan' => 'Di sewa'
+        ]);
+
+        DB::table('keterangan')->insert([
+            'nama_keterangan' => 'Di booking'
+        ]);
+
+        DB::table('keterangan')->insert([
+            'nama_keterangan' => 'Ready'
+        ]);
+
         DB::table('users')->insert([
             'nama' => 'yusuf',
             'email' => 'yusuf@gmail.com',

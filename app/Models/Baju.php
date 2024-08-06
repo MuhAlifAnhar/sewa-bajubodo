@@ -17,4 +17,8 @@ class Baju extends Model
 {
     return $this->belongsTo(Toko::class, 'id_toko');
 }
+public function keterangan()
+{
+    return $this->belongsTo(Keterangan::class, 'nama_keterangan');
+}
 }

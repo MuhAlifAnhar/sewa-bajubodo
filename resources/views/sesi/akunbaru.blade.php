@@ -41,11 +41,10 @@
                     <select class="form-select" id="floatingSelect" aria-label="Floating label select example"
                         name="role">
                         {{-- <option selected>Open this select menu</option> --}}
-                        <option value="1">User</option>
                         <option value="2">Admin</option>
                         {{-- <option value="3">Super</option> --}}
                     </select>
-                    <label for="floatingSelect">Pilih role anda</label>
+                    <label for="floatingSelect">Role anda</label>
                 </div>
                 <button type="submit" class="btn tombol-masuk">Registrasi</button>
             </form>

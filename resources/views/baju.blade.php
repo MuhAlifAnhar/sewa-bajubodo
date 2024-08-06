@@ -19,9 +19,11 @@
                 <tr>
                     <th>No</th>
                     <th>Nama</th>
+                    <th>Deskripsi</th>
                     <th>Harga</th>
                     <th>Image</th>
                     <th>Nama Toko</th>
+                    <th>Keterangan Sewa</th>
                     <th>Keterangan</th>
                 </tr>
             </thead>
@@ -30,9 +32,11 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $nama->nama }}</td>
+                        <td>{{ $nama->deskripsi }}</td>
                         <td>{{ $nama->harga }}</td>
                         <td>{{ $nama->image }}</td>
                         <td>{{ $nama->toko->nama_toko }}</td>
+                        <td>{{ $nama->keterangan->nama_keterangan }}</td>
                         <td>
                             <div class="d-flex">
                                 <div class="pe-2">

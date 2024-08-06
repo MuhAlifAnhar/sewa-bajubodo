@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 </head>
 
 <body>
@@ -40,23 +40,11 @@
             </div>
             <div>
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Selamat datang, {{ auth()->user()->nama }}
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li>
-                                <form action="/logout" method="post">
-                                    @csrf
-                                    <button type="submit" class="dropdown-item">
-                                        <i class="bi bi-box-arrow-right"></i> Logout
-                                    </button>
-                                </form>
-                            </li>
-                            {{-- <li><hr class="dropdown-divider"></li> --}}
-                        </ul>
-                    </li>
+                    <div class="text-decoration-none">
+                        <li class="nav-item dropdown bi bi-box-arrow-right text-white">
+                            <a class="text-decoration-none text-white log" href="/login">Login Admin</a>
+                        </li>
+                    </div>
                 </ul>
             </div>
         </div>

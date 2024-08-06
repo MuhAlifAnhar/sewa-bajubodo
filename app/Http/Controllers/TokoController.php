@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Toko;
+use App\Models\Baju;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class TokoController extends Controller
@@ -28,7 +30,12 @@ class TokoController extends Controller
     public function create()
     {
         $this->authorize('isSuper');
-        return view('tokocreate');
+        
+        $admin = User::where('role_id', 2)->get();
+
+        return view('tokocreate', [
+            'admin' => $admin
+        ]);
     }
 
     /**
@@ -40,12 +47,13 @@ class TokoController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama' => 'required|max:255'
+            'nama' => 'required|max:255',
+            'akun_admin' => 'required|max:255'
         ]);
 
         Toko::create([
             'nama_toko' => $request->nama,
-            'id_admin' => auth()->user()->id
+            'id_admin' => $request->akun_admin
         ]);
 
         return redirect('/admin/namatoko')->with('sukses', 'Toko baru telah ditambahkan!');
@@ -91,9 +99,15 @@ class TokoController extends Controller
      * @param  \App\Models\Toko  $toko
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Toko $toko, $id)
+    public function destroy($id)
     {
-        $toko::where('id', $id) ->delete();
+        $baju = \App\Models\Baju::where('id_toko', $id)->first();
+
+        if ($baju) {
+            $baju->delete();
+        }
+
+        \App\Models\Toko::destroy($id);
         
         return redirect('/admin/namatoko')->with('sukses', 'Toko telah dihapus!');
     }

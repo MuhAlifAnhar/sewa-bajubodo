@@ -1,7 +1,7 @@
 @extends('main.adakah')
 
 @section('body')
-    <h1>Dashboard Akun Admin</h1>
+    <h1>Dashboard Akun User</h1>
 
     @if (session()->has('success'))
         <div class="alert alert-success" role="alert">
@@ -18,7 +18,7 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Nama Request Toko</th>
+                    <th>Akun User</th>
                     <th>Keterangan</th>
                 </tr>
             </thead>
@@ -28,16 +28,14 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $nama->nama }}</td>
                         <td>
-                            <div class="d-flex">
-                                <form action="{{ url('/super/akun/' . $nama->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="badge bg-danger border-0"
-                                        onclick="return confirm('Kamu yakin mau hapus akun?')">
-                                        <span data-feather="x-circle"></span> Hapus
-                                    </button>
-                                </form>
-                            </div>
+                            <form action="{{ url('/super/akun/' . $nama->id) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="badge bg-danger border-0"
+                                    onclick="return confirm('Kamu yakin mau hapus akun?')">
+                                    <span data-feather="x-circle"></span> Hapus
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Toko;
 use App\Models\Baju;
+use App\Models\Keterangan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -19,10 +20,12 @@ class BajuController extends Controller
         $this->authorize('isAdmin');
     
     $toko = Toko::where('id_admin', auth()->user()->id)->get();
-    $baju = Baju::whereIn('id_toko', $toko->pluck('id'))->get();
+    $keterangan = Keterangan::all();
+    $baju = Baju::where('id_admin', auth()->user()->id)->get();
 
     return view('baju', [
         'toko' => $toko,
+        'kete' => $keterangan,
         'baju' => $baju,
     ]);
     }
@@ -36,10 +39,12 @@ class BajuController extends Controller
     {
         $this->authorize('isAdmin');
 
-        $toko = Toko::all();
+        $toko = Toko::where('id_admin', auth()->user()->id)->get();
+        $keterangan = Keterangan::all();
 
         return view('bajucreate', [
         'toko' => $toko,
+        'kete' => $keterangan,
         ]);
     }
 
@@ -53,9 +58,11 @@ class BajuController extends Controller
     {
         $request->validate([
             'nama_produk' => 'required|max:255',
+            'deskripsi' => 'required|max:255',
             'harga' => 'required|integer|min:0',
             'image' => 'image|file|required',
             'nama_toko' => 'required|max:255',
+            'nama_keterangan' => 'required|max:255',
         ]);
 
         $imagePath = $request->file('image')->store('images');
@@ -63,9 +70,12 @@ class BajuController extends Controller
 
         Baju::create([
             'nama' => $request->nama_produk,
+            'deskripsi' => $request->deskripsi,
             'harga' => $request->harga,
             'image' => $imagePath,
-            'id_toko' => $request->nama_toko
+            'id_toko' => $request->nama_toko,
+            'nama_keterangan' => $request->nama_keterangan,
+            'id_admin' => auth()->user()->id
         ]);
 
         return redirect('/admin/produk')->with('sukses', 'Produk baru telah ditambahkan!');
@@ -95,11 +105,14 @@ class BajuController extends Controller
         $baju = Baju::findOrFail($id);
 
         $toko = Toko::where('id_admin', auth()->user()->id)->get();
-        
+        // $toko = Toko::all();
 
+        $keterangan = Keterangan::all();
+        
         return view('bajuedit', [
             'baju' => $baju,
             'toko' => $toko,
+            'kete' => $keterangan
         ]);
     }
 
@@ -116,9 +129,11 @@ class BajuController extends Controller
 
     $request->validate([
         'nama_produk' => 'required|max:255',
+        'deskripsi' => 'required|max:255',
         'harga' => 'required|integer|min:0',
         'image' => 'image|file',
-        'nama_toko'=> 'required|exists:toko,id'
+        'nama_toko'=> 'required|exists:toko,id',
+        'nama_keterangan'=> 'required|exists:keterangan,id'
     ]);
 
     if ($request->hasFile('image')) {
@@ -132,9 +147,12 @@ class BajuController extends Controller
 
     $baju = Baju::findOrFail($id)->update([
         'nama' => $request->nama_produk,
+        'deskripsi' => $request->deskripsi,
         'harga' => $request->harga,
         'image' => $imagePath,
         'id_toko' => $request->nama_toko,
+        'nama_keterangan' => $request->nama_keterangan,
+        'id_admin' => auth()->user()->id
     ]);
 
     // Redirect ke halaman produk dengan pesan sukses
@@ -149,6 +167,9 @@ class BajuController extends Controller
      */
     public function destroy(Baju $baju, $id)
     {
+        if ($baju->image) {
+            Storage::delete($baju->image);
+        }
         $baju::where('id', $id) ->delete();
         
         return redirect('/admin/produk')->with('sukses', 'Produk telah dihapus!');

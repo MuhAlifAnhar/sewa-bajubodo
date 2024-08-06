@@ -7,8 +7,11 @@ use Illuminate\Support\Facades\Auth;
 
 class SessionController extends Controller
 {
-    function index(){
+    function login(){
         return view("sesi.index");
+    }
+    function index(){
+        return view("home");
     }
     // function login(Request $request){
     //     $request->validate([
