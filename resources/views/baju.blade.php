@@ -34,7 +34,11 @@
                         <td>{{ $nama->nama }}</td>
                         <td>{{ $nama->deskripsi }}</td>
                         <td>{{ $nama->harga }}</td>
-                        <td>{{ $nama->image }}</td>
+                        <td>
+                            <img src="{{ asset('storage/' . $nama->image) }}" alt="Gambar"
+                                style="max-height: 100px; max-width: 100px;">
+                        </td>
+
                         <td>{{ $nama->toko->nama_toko }}</td>
                         <td>{{ $nama->keterangan->nama_keterangan }}</td>
                         <td>
