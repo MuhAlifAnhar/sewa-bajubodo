@@ -13,8 +13,8 @@
         <a href="/admin/namatoko/create" class="btn btn-success"><span data-feather="plus"></span> Buat nama toko</a>
     </div>
 
-    <div class="col-lg-8">
-        <table id="myTable" class="display">
+    <div class="table-responsive">
+        <table id="myTable" class="display table table-bordered w-100">
             <thead>
                 <tr>
                     <th>No</th>
