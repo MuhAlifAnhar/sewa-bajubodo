@@ -36,19 +36,6 @@
                     </div>
                 @enderror
             </div>
-            <div class="form-group mb-3">
-                <label for="nama_keterangan">jenis produk</label>
-                <select name="nama_keterangan" class="form-control @error('nama_keterangan') is-invalid @enderror"
-                    id="nama_keterangan" required value="{{ old('nama_keterangan') }}">
-                    @error('nama_keterangan')
-                        <div class="invalid-feedback">
-                            {{ $message }}
-                        </div>
-                    @enderror
-                    @foreach ($kete as $keterangan)
-                    @endforeach
-                </select>
-            </div>
             <div class="mb-3">
                 <label for="image" class="form-label">Masukkan foto produk</label>
                 <img class="img-preview img-fluid mb-3">

@@ -24,7 +24,7 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 */
 
 Route::get('/', [SessionController::class, 'index'])->middleware('guest');
-Route::get('/login', [SessionController::class, 'login'])->name('login')->middleware('guest');
+Route::get('/login', [SessionController::class, 'login'])->name('login');
 //->name('login')
 // Route::post('/', [SessionController::class, 'index']);
 

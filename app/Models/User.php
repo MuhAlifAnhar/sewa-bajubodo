@@ -21,6 +21,11 @@ class User extends Authenticatable
         'id'
     ];
 
+    public function toko()
+    {
+        return $this->hasOne(Toko::class, 'id_admin'); // 'id_admin' adalah foreign key di tabel toko
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

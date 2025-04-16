@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Toko;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -20,8 +21,16 @@ class LoginController extends Controller
                 return redirect()->intended('/dashboard');
            }
           if(Auth::user()->role_id === 2 ){
-                $request->session()->regenerate();
-                return redirect()->intended('/admin');
+            if(Auth::user()->toko){
+                if(Auth::user()->toko->id_admin === Auth::user()->id ){
+                    $request->session()->regenerate();
+                    return redirect()->intended('/admin');
+                } else {
+                    return back()->with('loginError','Login gagal! Anda Bukan Admin Toko');
+                }
+            }else {
+                return back()->with('loginError', 'Login gagal! Anda tidak memiliki toko.');
+            }
            }
            if(Auth::user()->role_id === 3 ){
                 $request->session()->regenerate();
@@ -29,7 +38,7 @@ class LoginController extends Controller
            }
          }
 
-         return back()->with('loginError','Login gagal!');
+         return back()->with('loginError','Username atau Password Anda Salah!');
     }
     public function akunbaru(){
         return view('sesi.akunbaru');
@@ -51,10 +60,10 @@ class LoginController extends Controller
             'password' => bcrypt($request->password),
             'role_id' => $request->role,
         ]);
-        
+
 
         $request->session()->flash('success','Registrasi sukses! Silahkan login');
-        
+
         return redirect('/');
     }
 
